@@ -15,10 +15,10 @@ ActiveAdmin.register Tracking do
   end
 
   show do
-  	attributes_table do
-  		row :ip_address
-  		row :user_email
-  		row("History") { render partial: 'admin/trackings/tracking', locals: { field: tracking.history } }
-  	end
+    attributes_table do
+      row :ip_address
+      row :user_email
+      row("History") { render partial: 'admin/trackings/tracking', locals: { field: tracking.history } }
+    end
   end
 end

@@ -16,13 +16,13 @@ And then execute:
 
     $ bundle
 
-    $ rails g tracking_fwz:install
+    $ rails g tracking:install
 
     $ rake db:migrate
 
 If you use active admin
 		
-		$ rails g tracking_fwz:admin
+		$ rails g tracking:admin
 
 ## Usage
 

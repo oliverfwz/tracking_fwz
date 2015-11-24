@@ -16,13 +16,20 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+    $ rails g tracking_fwz:install
 
-    $ gem install tracking_fwz
+    $ rake db:migrate
+
+If you use active admin
+		
+		$ rails g tracking_fwz:admin
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this line to you application_controller.rb
+
+		include TrackingConcern
+		before_action :tracking_history
 
 ## Development
 

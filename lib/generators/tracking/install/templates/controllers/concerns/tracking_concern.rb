@@ -58,10 +58,10 @@ module TrackingConcern
   end
 
   def has_devise?
-    TrackingGem.model_devise.present?
+    TrackingFwz.model_devise.present?
   end
 
   def current_model_devise
-    "current_#{TrackingGem.model_devise}"
+    "current_#{TrackingFwz.model_devise}"
   end
 end

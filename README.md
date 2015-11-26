@@ -29,6 +29,26 @@ Add this line to you application_controller.rb
 		include TrackingConcern
 		before_action :tracking_history
 
+Build method send mail and include a variable 'histories'. Make 'histories' can use in your template mailer
+		
+		def notify_after_save (contact, email, histories)
+			@contact = contact
+			@histories = histories
+			mail(
+				from: "admin@example.com",
+				to: email,
+				subject: "New contact"
+				)
+		end
+
+Because in this gem we use cookie so we need call method send mail in controller. And you add more variable cookies[:tracking_history]
+
+		ContactMailer.notify_after_save(@contact, "oliver@futureworkz.com", cookies[:tracking_history]).deliver_now
+
+Finally, add line in you template mailer
+		
+		= render "trackings/tracking"
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
